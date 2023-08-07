@@ -1,0 +1,24 @@
+{
+  
+  "include": ["env.d.ts", "src/**/*", "src/**/*.vue","src/**/*.ts","types/**/*.ts"],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "esModuleInterop": true,      
+  },
+  "module":["esnext","es2022","esModuleInterop"],
+  "files": [],
+  "target":"es2022",
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ],
+  "types": [
+    "node"
+  ]
+}
