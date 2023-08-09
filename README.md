@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+# YMusic
+A music player using vue3+ts+pinia+vue-router+element-ui
+=======
+>>>>>>> 4dcbe43 ('init')
 # my-music
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -38,3 +45,7 @@ npm run dev
 ```sh
 npm run build
 ```
+<<<<<<< HEAD
+=======
+>>>>>>> 89ef012 ('初始化')
+>>>>>>> 4dcbe43 ('init')
