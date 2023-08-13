@@ -43,8 +43,11 @@ export function parse(lyrics: string) {
     console.log(lyArr);
 
   };
+<<<<<<< HEAD
 
   console.log(lyrics);
+=======
+>>>>>>> a68e5b0 (8.10)
   parseBef(lyrics);
   parseLy(lyrics);
   lyricStore.mergeLyric(lyArr.value, artArr.value)

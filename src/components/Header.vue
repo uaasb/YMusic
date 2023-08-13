@@ -7,7 +7,11 @@
             <Fold class="icon" v-else style="width: 1em; height: 1em; margin-right: 8px;color:var(--brandColor)" />
 
         </div>
+<<<<<<< HEAD
         <div class="logo ml-5"><img src="src\assets\img\logo.png"
+=======
+        <div class="logo ml-5"><img src="../assets/img/logo.png"
+>>>>>>> a68e5b0 (8.10)
                 class="h-10 pointer mr-7 object-contain shrink justify-start" alt=""
                 @click="$router.push({ name: 'index' })"></div>
 
@@ -25,7 +29,11 @@
         </div>
         <div class="avatar flex align-center flex-1" @click="uplogin">
             <el-avatar :src="profile?.avatarUrl" size="small" class="pointer" />
+<<<<<<< HEAD
             <span class="hover:text-brandColor ml-6 pointer">{{ profile.nickname ? profile.nickname : '未登录' }}</span>
+=======
+            <span class="hover:text-brandColor ml-6 pointer">{{ profile?.nickname ? profile.nickname : '未登录' }}</span>
+>>>>>>> a68e5b0 (8.10)
         </div>
         <el-dialog v-model="centerDialogVisible" title="登录" width="40%" align-center>
             <span>使用网易云app扫描二维码登录</span>

@@ -19,16 +19,26 @@
     <div class="flex-1 " :class="{ 'w-1/4': showAlName, 'w-1/3': !showAlName }" v-if="showArName">
       <div class="w-9/12 truncate">
         <span class="truncate max-w-full  pointer hover:text-brandColor"
+<<<<<<< HEAD
           @click="router.push({ name: 'artistDetail', query: { id: song?.ar.first().id ?? song.artists.first().id } })">{{
             song?.ar?.first().name ?? song.artists.first().name
+=======
+          @click="router.push({ name: 'artistDetail', query: { id: song.ar?.first().id ?? song.artists.first().id } })">{{
+            song.ar?.first().name ?? song.artists.first().name
+>>>>>>> a68e5b0 (8.10)
           }}</span>
       </div>
     </div>
     <div class="flex-1" :class="{ 'w-1/4': showArName, 'w-1/3': !showArName }" v-if="showAlName">
       <div class="w-9/12 truncate pointer">
         <span class="truncate hover:text-brandColor"
+<<<<<<< HEAD
           @click="router.push({ name: 'album', query: { id: song?.al?.id ?? song.album.id } })">{{
             song?.al?.name ?? song.album.name
+=======
+          @click="router.push({ name: 'album', query: { id: song.al?.id ?? song.album.id } })">{{
+            song.al?.name ?? song.album.name
+>>>>>>> a68e5b0 (8.10)
           }}</span>
       </div>
     </div>

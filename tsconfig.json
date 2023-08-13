@@ -10,7 +10,11 @@
     },
     "esModuleInterop": true,      
   },
+<<<<<<< HEAD
   "module":["esnext","es2022","esModuleInterop"],
+=======
+  "module":"es2022",
+>>>>>>> a68e5b0 (8.10)
   "files": [],
   "target":"es2022",
   "references": [

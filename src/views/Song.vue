@@ -26,13 +26,21 @@
     </div>
 </template>
 <script  setup lang='ts'>
+<<<<<<< HEAD
 import { usePlayerStore } from '@/stores/player';
 import { storeToRefs } from 'pinia'
+=======
+console.log("setup")
+import { usePlayerStore } from '@/stores/player';
+import { storeToRefs } from 'pinia'
+import { Song } from '@/models/song';
+>>>>>>> a68e5b0 (8.10)
 import { useLyric } from '@/stores/lyric'
 import { ElScrollbar, ScrollbarContext } from 'element-plus';
 import { onMounted, onUpdated, onBeforeUpdate, onBeforeMount, watchEffect, ref, watch } from 'vue';
 import { parse } from '@/utils/parseLyric'
 const { song, currentTime, duration, isPlaying } = storeToRefs(usePlayerStore())
+<<<<<<< HEAD
 const { getLyric } = useLyric()
 await getLyric(song.value.id)
 const { artArr, lyArr, showLyric } = storeToRefs(useLyric())
@@ -51,6 +59,21 @@ const pic = ref(null)
 //     parse(lyric.value)
 // })
 console.log(showLyric)
+=======
+const Lyric = useLyric()
+const lyricUl = ref(null)
+let transform = ref("")
+let currIndex = ref(0)
+const { getLyric } = useLyric()
+await getLyric(song.value.id)
+const { artArr, lyArr, showLyric } = storeToRefs(Lyric)
+let { lyric } = storeToRefs(Lyric)
+parse(lyric.value)
+const scrollbar = ref(null)
+const icon = ref(null)
+const pic = ref(null)
+
+>>>>>>> a68e5b0 (8.10)
 onMounted(() => {
     let toTop = 0;
     watch(currentTime, () => {
@@ -59,7 +82,11 @@ onMounted(() => {
             //     currIndex.value = i
             //     return
             // }
+<<<<<<< HEAD
             if (ly.showContent && arr[i].time <= currentTime.value * 1000 && arr[i + 1].time > currentTime.value * 1000) {
+=======
+            if (ly.showContent && arr[i].time <= currentTime.value * 1000 && arr[i + 1]?.time > currentTime.value * 1000) {
+>>>>>>> a68e5b0 (8.10)
                 toTop = lyricUl.value.children[i].offsetTop
                 scrollbar.value.setScrollTop(toTop)
                 currIndex.value = i
@@ -67,8 +94,20 @@ onMounted(() => {
 
         })
     })
+<<<<<<< HEAD
 })
 
+=======
+
+})
+
+watch(song, async (newSong) => {
+    console.log(newSong)
+    await getLyric(newSong.id)
+    console.log(lyric.value)
+    parse(lyric.value)
+})
+>>>>>>> a68e5b0 (8.10)
 
 </script>
 <style lang='less' scoped>

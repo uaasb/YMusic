@@ -8,7 +8,14 @@
 
 
     <el-scrollbar max-height="700px">
+<<<<<<< HEAD
       <RouterView class="router-view" />
+=======
+      <Suspense>
+        <RouterView class="router-view" />
+      </Suspense>
+
+>>>>>>> a68e5b0 (8.10)
     </el-scrollbar>
   </div>
   <Teleport to="body">

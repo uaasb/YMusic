@@ -30,7 +30,11 @@ const routes: RouteRecordRaw[] = [{
     {
       name: 'music',
       path: 'music',
+<<<<<<< HEAD
       redirect: { name: 'picked' },
+=======
+      redirect: { name: 'category' },
+>>>>>>> a68e5b0 (8.10)
       component: () => import('../views/Music.vue'),
       children: [
         {
@@ -135,7 +139,11 @@ const router = createRouter({
   routes
 
 })
+<<<<<<< HEAD
 router.beforeEach((from, to, next) => {
+=======
+router.beforeEach((to, from, next) => {
+>>>>>>> a68e5b0 (8.10)
   if (to.path == '/my') {
     if (!localStorage.getItem('profile')) {
       ElMessage.info({

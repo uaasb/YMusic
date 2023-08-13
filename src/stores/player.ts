@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 import {defineStore, storeToRefs} from "pinia";
 import {useDetail, useSongUrl} from "@/api/api";
 import {onMounted, onUnmounted, toRefs, watch} from "vue";
 import type {Song} from "@/models/song";
 import type {SongUrl} from "@/models/song_url";
+=======
+import { defineStore, storeToRefs } from "pinia";
+import { useDetail, useSongUrl } from "@/api/api";
+import { onMounted, onUnmounted, toRefs, watch } from "vue";
+import type { Song } from "@/models/song";
+import type { SongUrl } from "@/models/song_url";
+>>>>>>> a68e5b0 (8.10)
 
 const KEYS = {
     volume: 'PLAYER-VOLUME'
@@ -12,8 +20,13 @@ export const usePlayerStore = defineStore({
     id: "player",
     state: () => ({
         audio: new Audio(),
+<<<<<<< HEAD
         loopType: 0,//循环模式 0 单曲循环 1 列表循环 2随机播放
         volume: !localStorage.getItem(KEYS.volume)?localStorage.getItem(KEYS.volume).toInt() : 30,//音量
+=======
+        loopType: 1,//循环模式 0 单曲循环 1 列表循环 2随机播放
+        volume: localStorage.getItem(KEYS.volume) ? localStorage.getItem(KEYS.volume).toInt() : 30,//音量
+>>>>>>> a68e5b0 (8.10)
         playList: [] as Song[],//播放列表,
         showPlayList: false,
         id: 0,
@@ -36,7 +49,11 @@ export const usePlayerStore = defineStore({
             return state.playList.findIndex(song => song.id === state.id);
         },
         nextSong(state): Song {
+<<<<<<< HEAD
             const {thisIndex, playListCount} = this
+=======
+            const { thisIndex, playListCount } = this
+>>>>>>> a68e5b0 (8.10)
             if (thisIndex === playListCount - 1) {
                 return state.playList.first();
             } else {
@@ -45,7 +62,11 @@ export const usePlayerStore = defineStore({
             }
         },
         prevSong(state): Song {
+<<<<<<< HEAD
             const {thisIndex} = this
+=======
+            const { thisIndex } = this
+>>>>>>> a68e5b0 (8.10)
             if (thisIndex === 0 && state.loopType !== 0) {
                 return state.playList.last();
             } else {
@@ -90,7 +111,11 @@ export const usePlayerStore = defineStore({
         },
         async play(id: number) {
             if (id == this.id) return;
+<<<<<<< HEAD
             if(id==0) return;
+=======
+            if (id == 0) return;
+>>>>>>> a68e5b0 (8.10)
             this.isPlaying = false
             const data = await useSongUrl(id)
             this.audio.src = data.url;
@@ -133,6 +158,10 @@ export const usePlayerStore = defineStore({
         },
         //下一曲
         next() {
+<<<<<<< HEAD
+=======
+            this.isPause = true
+>>>>>>> a68e5b0 (8.10)
             if (this.loopType === 2) {
                 this.randomPlay()
             } else {
@@ -142,6 +171,10 @@ export const usePlayerStore = defineStore({
         },
         //上一曲
         prev() {
+<<<<<<< HEAD
+=======
+            this.isPause = true
+>>>>>>> a68e5b0 (8.10)
             this.play(this.prevSong.id)
         },
         //随机播放
@@ -188,8 +221,13 @@ export const usePlayerStore = defineStore({
         },
         //音量设置
         setVolume(n: number) {
+<<<<<<< HEAD
             n = n > 100 ? 100 : n<0?0:n
             
+=======
+            n = n > 100 ? 100 : n < 0 ? 0 : n
+
+>>>>>>> a68e5b0 (8.10)
             this.volume = n
             this.audio.volume = n / 100
             localStorage.setItem('PLAYER-VOLUME', n.toString())
@@ -198,7 +236,11 @@ export const usePlayerStore = defineStore({
         onSliderChange(val: number) {
             this.currentTime = val
             this.sliderInput = false;
+<<<<<<< HEAD
             this.audio.currentTime = Number.isNaN(val)?parseInt('0'):val
+=======
+            this.audio.currentTime = Number.isNaN(val) ? parseInt('0') : val
+>>>>>>> a68e5b0 (8.10)
             console.log(this.currentTime)
         },
         //播放时间拖动中
@@ -208,7 +250,11 @@ export const usePlayerStore = defineStore({
         //定时器
         interval() {
             if (this.isPlaying && !this.sliderInput) {
+<<<<<<< HEAD
                 this.currentTime = Number.isNaN(parseInt(this.audio.currentTime.toString()))?parseInt('0'):parseInt(this.audio.currentTime.toString());
+=======
+                this.currentTime = Number.isNaN(parseInt(this.audio.currentTime.toString())) ? parseInt('0') : parseInt(this.audio.currentTime.toString());
+>>>>>>> a68e5b0 (8.10)
                 this.duration = parseInt(this.audio.duration.toString());
                 this.ended = this.audio.ended
             }
@@ -219,9 +265,15 @@ export const usePlayerStore = defineStore({
 
 export const userPlayerInit = () => {
     let timer: NodeJS.Timer;
+<<<<<<< HEAD
     const {init, interval, playEnd} = usePlayerStore()
 
     const {ended} = storeToRefs(usePlayerStore())
+=======
+    const { init, interval, playEnd } = usePlayerStore()
+
+    const { ended } = storeToRefs(usePlayerStore())
+>>>>>>> a68e5b0 (8.10)
 
     //监听播放结束
     watch(ended, ended => {

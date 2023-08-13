@@ -1,6 +1,10 @@
 import axios, { type AxiosRequestConfig } from "axios";
 
+<<<<<<< HEAD
 axios.defaults.baseURL = "http://localhost:3000";
+=======
+axios.defaults.baseURL = "http://101.33.207.90:3000";
+>>>>>>> a68e5b0 (8.10)
 axios.defaults.timeout = 20 * 1000;
 axios.defaults.maxBodyLength = 5 * 1024 * 1024;
 axios.defaults.withCredentials = true

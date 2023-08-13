@@ -5,7 +5,11 @@
 
   "scripts": {
     "dev": "vite serve --mode development",
+<<<<<<< HEAD
     "build": "run-p type-check build-only",
+=======
+    "build": "vite build",
+>>>>>>> a68e5b0 (8.10)
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false"

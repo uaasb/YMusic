@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 # YMusic
@@ -35,17 +36,37 @@ npm install
 ```
 
 ### Compile and Hot-Reload for Development
+=======
+
+# YMusic
+A music player using vue3+ts+pinia+vue-router+element-ui+wailwindcss
+
+### 初始化
+
+```sh 
+npm install
+```
+
+### 运行
+>>>>>>> a68e5b0 (8.10)
 
 ```sh
 npm run dev
 ```
 
+<<<<<<< HEAD
 ### Type-Check, Compile and Minify for Production
+=======
+### 打包
+>>>>>>> a68e5b0 (8.10)
 
 ```sh
 npm run build
 ```
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> 89ef012 ('初始化')
 >>>>>>> 4dcbe43 ('init')
+=======
+>>>>>>> a68e5b0 (8.10)

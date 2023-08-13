@@ -16,7 +16,14 @@ export const useLyric = defineStore('lyric', {
     }),
     actions: {
         async getLyric(id: number) {
+<<<<<<< HEAD
             this.lyric = ref(await useSongLyric(id))
+=======
+            this.lyric = await useSongLyric(id)
+            console.log("lyric");
+            console.log(this.lyric)
+            return this.lyric
+>>>>>>> a68e5b0 (8.10)
         },
         changeLyric(lyrics: lyric[]) {
             this.lyArr = lyrics
