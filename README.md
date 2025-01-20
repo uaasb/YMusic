@@ -5,14 +5,10 @@
 # YMusic
 A music player using vue3+ts+pinia+vue-router+element-ui
 change1
-change2
-change3
-change4
-change5
 =======
 >>>>>>> 4dcbe43 ('init')
 # my-music
-
+This template
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
